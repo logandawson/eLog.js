@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    ![eLog.js example](https://github.com/logandawson/eLog.js/blob/main/imgs/elog.png | width=640)
+    ![eLog.js example](https://github.com/logandawson/eLog.js/blob/main/imgs/elog.png)
 </p>
 
 ## Prerequisites

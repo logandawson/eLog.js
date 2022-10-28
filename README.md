@@ -6,9 +6,7 @@
     Generate electronic logs for drivers using the &lt;canvas> element.
 </p>
 
-<p align="center">
-    ![eLog.js example](https://github.com/logandawson/eLog.js/blob/main/imgs/elog.png)
-</p>
+![eLog.js example](https://github.com/logandawson/eLog.js/blob/main/imgs/elog.png)
 
 ## Prerequisites
 

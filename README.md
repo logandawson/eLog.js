@@ -14,7 +14,7 @@ eLog.js requires jQuery.
 
 ## Usage
 
-Download and reference the eLog.js script.
+Download and reference the `eLog.js` script.
 ```html
 <script src="js/eLog.js" type="text/javascript"></script>
 ```
@@ -30,7 +30,7 @@ const c = document.getElementById("log");
 const ctx = c.getContext("2d");
 ```
 
-Create a config object with your data and options.
+Create a `config` object with your data and options. See below for definitions.
 ```js
 const config = {
     data: [
@@ -42,7 +42,7 @@ const config = {
 }
 ```
 
-Display the eLog using the context and config.
+Display the electronic log using the context and config.
 ```js
 new eLog(ctx, config);
 ```

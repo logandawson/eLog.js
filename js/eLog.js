@@ -2,6 +2,9 @@
  * eLog.js
  * Version: 1.0.0-a
  * Author: Logan Dawson
+ * Description: Generate electronic logs for drivers using the <canvas> element.
+ * Link: https://github.com/logandawson/eLog.js
+ * License: GNU General Public License v3.0
  */
 
 function getCanvas(item) {

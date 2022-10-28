@@ -66,4 +66,4 @@ startStatus | integer | Initial status for the log. See above for each correspon
 startOffDutyHours | decimal | Current off-duty hours at the start of the day. Default is 0.
 startDrivingHours | decimal | Current driving hours at the start of the day. Default is 0.
 startDutyHours | decimal | Current duty hours (driving + on-duty) at the start of the day. Default is 0.
-startDate | string | The last date and time a change in status was made. For example, if the driver drove through the night set this to when they began driving.
+startDate | string | The first date and time a change in status was made. For example, if the driver drove through the night set this to when they began driving.

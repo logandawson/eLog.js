@@ -19,7 +19,7 @@
             /** @type {CanvasRenderingContext2D} */
             const ctx = c.getContext("2d");
 
-            new eLog(ctx, {
+            var log = new eLog(ctx, {
                 data: [
                     { status: 1, d: '2022-01-01 08:00:00.000' },
                     { status: 3, d: '2022-01-01 08:30:00.000' },
@@ -38,6 +38,8 @@
                     startDate: '2022-01-01 00:00:00.000'
                 }
             });
+
+            log.addData(4, '2022-01-01 16:45:00');
         });
     </script>
 </body>

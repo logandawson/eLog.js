@@ -218,6 +218,18 @@ class eLog {
         return this.config.options.startDate;
     }
 
+    addData = (addStatus, addDate) => {
+        this.data.push(
+            {
+                status: addStatus,
+                d: addDate
+            }
+        )
+
+        this.config.scrubData();
+        this.resize();
+    }
+
     clearCanvas(canvas, ctx) {
         ctx = ctx || canvas.getContext('2d');
 

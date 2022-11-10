@@ -10,7 +10,7 @@
 
 ## Prerequisites
 
-eLog.js requires jQuery.
+Nothing. This is a pure JavaScript library.
 
 ## Usage
 

@@ -10,37 +10,33 @@
 
 <body>
     <canvas id="log"></canvas>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="js/eLog.js" type="text/javascript"></script>
-    <script>
-        $(document).ready(function () {
-            const c = document.getElementById("log");
-            /** @type {CanvasRenderingContext2D} */
-            const ctx = c.getContext("2d");
+    <script type="text/javascript">
+        const c = document.getElementById("log");
+        /** @type {CanvasRenderingContext2D} */
+        const ctx = c.getContext("2d");
 
-            var log = new eLog(ctx, {
-                data: [
-                    { status: 1, d: '2022-01-01 08:00:00.000' },
-                    { status: 3, d: '2022-01-01 08:30:00.000' },
-                    { status: 1, d: '2022-01-01 12:00:00.000' },
-                    { status: 3, d: '2022-01-01 12:30:00.000' },
-                    { status: 4, d: '2022-01-01 14:00:00.000' },
-                    { status: 3, d: '2022-01-01 14:15:00.000' },
-                    { status: 1, d: '2022-01-01 17:00:00.000' },
-                    { status: 2, d: '2022-01-01 20:00:00.000' }
-                ],
-                options: {
-                    startStatus: 2,
-                    startOffDutyHours: 0,
-                    startDrivingHours: 0,
-                    startDutyHours: 0,
-                    startDate: '2022-01-01 00:00:00.000'
-                }
-            });
-
-            log.addData(4, '2022-01-01 16:45:00');
+        var log = new eLog(ctx, {
+            data: [
+                { status: 1, d: '2022-01-01 08:00:00.000' },
+                { status: 3, d: '2022-01-01 08:30:00.000' },
+                { status: 1, d: '2022-01-01 12:00:00.000' },
+                { status: 3, d: '2022-01-01 12:30:00.000' },
+                { status: 4, d: '2022-01-01 14:00:00.000' },
+                { status: 3, d: '2022-01-01 14:15:00.000' },
+                { status: 1, d: '2022-01-01 17:00:00.000' },
+                { status: 2, d: '2022-01-01 20:00:00.000' }
+            ],
+            options: {
+                startStatus: 2,
+                startOffDutyHours: 0,
+                startDrivingHours: 0,
+                startDutyHours: 0,
+                startDate: '2022-01-01 00:00:00.000'
+            }
         });
+
+        log.addData(4, '2022-01-01 16:45:00');
     </script>
 </body>
 

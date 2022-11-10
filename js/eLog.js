@@ -202,6 +202,10 @@ class eLog {
         return this.config.options.startStatus;
     }
 
+    set startStatus(s) {
+        this.config.options.startStatus = s;
+    }
+
     get startOffDutyHours() {
         return this.config.options.startOffDutyHours;
     }
@@ -218,6 +222,16 @@ class eLog {
         return this.config.options.startDate;
     }
 
+    setStart = (status) => {
+        if (!isNaN(status) &&
+            status >= 1 &&
+            status <= 4) {
+            this.startStatus = status;
+        }
+
+        this.redraw();
+    }
+
     addData = (addStatus, addDate) => {
         this.data.push(
             {
@@ -227,7 +241,7 @@ class eLog {
         )
 
         this.config.scrubData();
-        this.resize();
+        this.redraw();
     }
 
     clearCanvas(canvas, ctx) {
@@ -240,6 +254,11 @@ class eLog {
         this.clearCanvas(this.canvas, this.ctx);
         this.canvas = null;
         this.ctx = null;
+    }
+
+    reset = () => {
+        this.data.length = 0;
+        this.redraw();
     }
 
     resetStatusHours = () => {
@@ -259,7 +278,7 @@ class eLog {
         this.fourteenHourLimit = this.startDutyHours;
     };
 
-    resize = () => {
+    redraw = () => {
         this.clearCanvas(this.canvas, this.ctx);
         this.resetStatusHours();
         this.initViolationCounters();
@@ -269,7 +288,7 @@ class eLog {
     };
 
     addResizeListener = () => {
-        window.addEventListener('resize', this.resize);
+        window.addEventListener('resize', this.redraw);
     };
 
     getFontSize = (sizePercent) => {
@@ -597,8 +616,8 @@ class eLog {
                 this.hourLineWidth);
         } else {
             this.drawSingleLine(
-                this.hours["0"], statuses[1].y,
-                this.hours["24"], statuses[1].y,
+                this.hours["0"], statuses[this.startStatus].y,
+                this.hours["24"], statuses[this.startStatus].y,
                 this.hourLineColor,
                 this.hourLineWidth);
         }

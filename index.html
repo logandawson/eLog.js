@@ -10,34 +10,66 @@
 </head>
 
 <body>
-    <div class="col-lg-8 mx-auto p-4 py-md-5">
-        <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+    <div class="col-xl-10 col-lg-11 mx-auto p-4 py-md-5">
+        <header class="d-flex align-items-center pb-3 mb-md-5 mb-4 border-bottom">
             <span class="fs-4">Driver Log Generator</span>
         </header>
         <main>
-            <form>
-                <div class="mb-4 pb-4 border-bottom">
-                    <label class="form-label">Date</label>
-                    <input type="date" class="form-control" id="inLogDate">
+            <div class="row gx-5">
+                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 mb-lg-0 mb-4">
+                    <form>
+                        <h3 class="mb-3">Setup</h3>
+                        <div class="row mb-4 pb-lg-5 pb-4 border-bottom">
+                            <div class="col-sm-6 mb-sm-0 mb-3">
+                                <label class="form-label">Start status</label>
+                                <select class="form-select" id="slctStartStatus">
+                                    <option value="1">Off-duty</option>
+                                    <option value="2">Sleeper berth</option>
+                                    <option value="3">Driving</option>
+                                    <option value="4">On-duty</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6 mb-sm-0 mb-3">
+                                <label class="form-label">Date</label>
+                                <input type="date" max="" class="form-control" id="inLogDate">
+                            </div>
+                        </div>
+                        <h3 class="mb-3">Event</h3>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 mb-sm-0 mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select" id="slctLogStatus">
+                                    <option value="1">Off-duty</option>
+                                    <option value="2">Sleeper berth</option>
+                                    <option value="3">Driving</option>
+                                    <option value="4">On-duty</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6 mb-sm-0 mb-3">
+                                <label class="form-label">Time</label>
+                                <input type="time" class="form-control" id="inLogTime">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" disabled id="btnAdd">Add</button>
+                        <button type="button" class="btn btn-danger" id="btnReset">Reset</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Time</label>
-                    <input type="time" class="form-control" id="inLogTime">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="mb-4">
+                        <canvas id="log"></canvas>
+                    </div>
+                    <table class="table" id="tblLog">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Status</label>
-                    <select class="form-control" id="slctLogStatus">
-                        <option value="1">Off-duty</option>
-                        <option value="2">Sleeper berth</option>
-                        <option value="3">Driving</option>
-                        <option value="4">On-duty</option>
-                    </select>
-                </div>
-                <button type="button" class="btn btn-primary" disabled id="btnAdd">Add</button>
-                <button type="button" class="btn btn-danger" id="btnReset">Reset</button>
-            </form>
-            <div class="my-5">
-                <canvas id="log"></canvas>
             </div>
         </main>
         <footer class="pt-5 my-5 text-muted border-top">
@@ -53,7 +85,7 @@
         /** @type {CanvasRenderingContext2D} */
         const ctx = c.getContext("2d");
 
-        var log = new eLog(ctx, {
+        let log = new eLog(ctx, {
             data: [],
             options: {
                 startStatus: 1

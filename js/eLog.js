@@ -41,7 +41,7 @@ function setConfig(config) {
 function setUpCanvas(canvas) {
     const style = canvas.style;
     const w = style.width || canvas.clientWidth;
-    const h = style.height || Math.ceil(w / 3.5);
+    const h = style.height || Math.ceil(w / 3.45);
 
     style.display = style.display || 'block';
 
@@ -354,7 +354,7 @@ class eLog {
                 this.elevenHourDriving = 0;
                 this.fourteenHourLimit = 0;
 
-                if (this.tenHourConsecutive < 7) {               
+                if (this.tenHourConsecutive < 7) {
                     this.sleeperConsecutive = 0;
                     this.sevenHourProvision = false;
                 }
@@ -655,7 +655,7 @@ class eLog {
 
             statuses[prevData.status].h = statuses[prevData.status].h + finalDiff;
         } else {
-            statuses[1].h = 24;
+            statuses[this.startStatus].h = 24;
         }
 
         for (var j = 1; j < 5; j++) {

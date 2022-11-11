@@ -1,3 +1,13 @@
 canvas {
     width: 100%;
 }
+
+table {
+    counter-reset: n;
+}
+
+table>tbody>tr td:first-child::before {
+    counter-increment: n;
+    content: counter(n);
+    font-weight: bold;
+}

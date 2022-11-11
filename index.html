@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>eLog Example</title>
+    <title>Free Driver Log Generator</title>
     <link rel="stylesheet" href="site/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/eLog.css">
 </head>
 
 <body>
     <div class="container">
+        <h2 class="text-center">Free Driver Log Generator</h2>
         <canvas id="log"></canvas>
     </div>
     <script src="site/js/jquery-3.6.1.min.js"></script>
@@ -23,26 +24,11 @@
         const ctx = c.getContext("2d");
 
         var log = new eLog(ctx, {
-            data: [
-                { status: 1, d: '2022-01-01 08:00:00.000' },
-                { status: 3, d: '2022-01-01 08:30:00.000' },
-                { status: 1, d: '2022-01-01 12:00:00.000' },
-                { status: 3, d: '2022-01-01 12:30:00.000' },
-                { status: 4, d: '2022-01-01 14:00:00.000' },
-                { status: 3, d: '2022-01-01 14:15:00.000' },
-                { status: 1, d: '2022-01-01 17:00:00.000' },
-                { status: 2, d: '2022-01-01 20:00:00.000' }
-            ],
+            data: [],
             options: {
-                startStatus: 2,
-                startOffDutyHours: 0,
-                startDrivingHours: 0,
-                startDutyHours: 0,
-                startDate: '2022-01-01 00:00:00.000'
+                startStatus: 1
             }
         });
-
-        log.addData(4, '2022-01-01 16:45:00');
     </script>
 </body>
 

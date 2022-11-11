@@ -4,15 +4,45 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Free Driver Log Generator</title>
+    <title>Driver Log Generator</title>
     <link rel="stylesheet" href="site/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/eLog.css">
+    <link rel="stylesheet" href="site/css/site.css">
 </head>
 
 <body>
-    <div class="container">
-        <h2 class="text-center">Free Driver Log Generator</h2>
-        <canvas id="log"></canvas>
+    <div class="col-lg-8 mx-auto p-4 py-md-5">
+        <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+            <span class="fs-4">Driver Log Generator</span>
+        </header>
+        <main>
+            <form>
+                <div class="mb-4 pb-4 border-bottom">
+                    <label class="form-label">Date</label>
+                    <input type="date" class="form-control" id="inLogDate">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Time</label>
+                    <input type="time" class="form-control" id="inLogTime">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Status</label>
+                    <select class="form-control" id="slctLogStatus">
+                        <option value="1">Off-duty</option>
+                        <option value="2">Sleeper berth</option>
+                        <option value="3">Driving</option>
+                        <option value="4">On-duty</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary" disabled id="btnAdd">Add</button>
+                <button type="button" class="btn btn-danger" id="btnReset">Reset</button>
+            </form>
+            <div class="my-5">
+                <canvas id="log"></canvas>
+            </div>
+        </main>
+        <footer class="pt-5 my-5 text-muted border-top">
+            Created by Logan Dawson
+        </footer>
     </div>
     <script src="site/js/jquery-3.6.1.min.js"></script>
     <script src="site/js/bootstrap.bundle.min.js"></script>
@@ -30,6 +60,7 @@
             }
         });
     </script>
+    <script src="site/js/site.js"></script>
 </body>
 
 </html>
